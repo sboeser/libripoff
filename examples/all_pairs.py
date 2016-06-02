@@ -38,9 +38,9 @@ public class HelloUniverse {
     }
 }
 """]
-    print all_pairs(catalogue)
-    print all_pairs(catalogue, parallel=True)
-    print all_pairs(catalogue, distance=distances.kolmogorov)
+    print(all_pairs(catalogue))
+    print(all_pairs(catalogue, parallel=True))
+    print(all_pairs(catalogue, distance=distances.kolmogorov))
 
 # Example code for loading a pickle file of submissions
 

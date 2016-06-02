@@ -12,10 +12,7 @@ I.e. you have to do something like:
 @author: moschlar
 '''
 
-try:
-    import cStringIO as StringIO
-except ImportError:
-    import StringIO
+from io import StringIO
 
 import pylab
 import hcluster
@@ -26,7 +23,7 @@ def cluster(M, method='complete'):
 
 
 def dendrogram(M, method='complete', title='complete linkage clustering', **kw):
-    s = StringIO.StringIO()
+    s = StringIO()
     pylab.figure()
     if title:
         pylab.title(title)

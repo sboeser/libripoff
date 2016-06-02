@@ -17,9 +17,13 @@ the correct matplotlib backend.
 
 from ripoff import all_pairs, distances
 from ripoff.clustering import cluster
-import urllib2
 import hcluster
 import pylab
+
+try:
+    import urllib.request as liburl
+except ImportError:
+    import urllib2 as liburl
 
 # some famous German literature
 urls = [("http://www.gutenberg.org/files/21000/21000-0.txt",      "Faust 1"),
@@ -40,8 +44,8 @@ catalogue = []
 
 for url, name in urls:
     headers = {'User-Agent': 'Mozilla/5.0'}
-    req = urllib2.Request(url, None, headers)
-    catalogue.append(urllib2.urlopen(req).read())
+    req = liburl.Request(url, None, headers)
+    catalogue.append(liburl.urlopen(req).read())
 
 # calc similarity matrix
 M = all_pairs(catalogue,
