@@ -29,5 +29,5 @@ setup(
         "Topic :: Software Development :: Libraries",
         "License :: OSI Approved :: BSD License",
     ],
-    install_requires=['numpy', 'hcluster', 'matplotlib'],
+    install_requires=['numpy', 'dedupe-hcluster', 'matplotlib'],
 )
