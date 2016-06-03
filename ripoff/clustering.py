@@ -14,15 +14,16 @@ I.e. you have to do something like:
 
 from io import StringIO
 
-import pylab
 import hcluster
-
 
 def cluster(M, method='complete'):
     return hcluster.linkage(hcluster.squareform(M), method=method)
 
 
 def dendrogram(M, method='complete', title='complete linkage clustering', **kw):
+
+    import pylab
+    
     s = StringIO()
     pylab.figure()
     if title:
